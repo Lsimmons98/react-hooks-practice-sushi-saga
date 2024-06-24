@@ -27,7 +27,6 @@ function SushiContainer({ managePlatesAndBalance, balance }) {
 
   const showMoreSushi = () => {
     setSushiLimit(sushiLimit + 4)
-    console.log(sushiLimit)
   }
 
   if (!sushiList) {

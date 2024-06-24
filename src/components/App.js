@@ -8,7 +8,7 @@ function App() {
   const [plates, setPlates] = useState([])
   const [balance, setBalance] = useState(100)
 
-  const managePlate = (price, id) => {
+  const managePlatesAndBalance = (price, id) => {
     if (!plates.includes(id) && price <= balance) {
       setPlates([...plates, id])
       setBalance(balance - price)
@@ -22,8 +22,11 @@ function App() {
 
   return (
     <div className="app">
-      <SushiContainer managePlate={managePlate} balance={balance} />
-      <Table plates={plates} balance={balance} />
+      <SushiContainer
+        managePlatesAndBalance={managePlatesAndBalance}
+        balance={balance}
+      />
+      <Table plates={plates} balance={balance} setBalance={setBalance} />
     </div>
   )
 }

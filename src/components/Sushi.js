@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-function Sushi({ sushi, managePlate, balance }) {
+function Sushi({ sushi, managePlatesAndBalance, balance }) {
   const { id, name, img_url, price, created_at } = sushi
   const [isEaten, setIsEaten] = useState(false)
 
@@ -9,7 +9,7 @@ function Sushi({ sushi, managePlate, balance }) {
     if (balance >= price || isEaten) {
       setIsEaten(!isEaten)
     }
-    managePlate(price, id)
+    managePlatesAndBalance(price, id)
   }
   return (
     <div className="sushi">

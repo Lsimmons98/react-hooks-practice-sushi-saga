@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import Sushi from "./Sushi"
 import MoreButton from "./MoreButton"
 
-function SushiContainer({ managePlate, balance }) {
+function SushiContainer({ managePlatesAndBalance, balance }) {
   const [sushiList, setSushiList] = useState(null)
   const [sushiLimit, setSushiLimit] = useState(4)
 
@@ -19,7 +19,7 @@ function SushiContainer({ managePlate, balance }) {
         <Sushi
           key={sushi.id}
           sushi={sushi}
-          managePlate={managePlate}
+          managePlatesAndBalance={managePlatesAndBalance}
           balance={balance}
         />
       ))
